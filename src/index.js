@@ -10,11 +10,11 @@ import path from 'path';
 import sassdocExtras from 'sassdoc-extras';
 import swig from './swig';
 
-denodeify = denodeify(Promise);
+const denodeify2 = denodeify(Promise);
 
-const copy = denodeify(fse.copy);
-const renderFile = denodeify(swig.renderFile);
-const writeFile = denodeify(fs.writeFile);
+const copy = denodeify2(fse.copy);
+const renderFile = denodeify2(swig.renderFile);
+const writeFile = denodeify2(fs.writeFile);
 
 const applyDefaults = ctx =>
   extend({}, def, ctx, {
