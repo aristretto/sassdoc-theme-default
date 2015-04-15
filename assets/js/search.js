@@ -32,6 +32,8 @@
       return {
         name: $item.data('name'),
         type: $item.data('type'),
+        uuid: $item.data('uuid'),
+        group: $item.data('group'),
         node: $item
       };
     }), this.conf.fuse);
@@ -45,10 +47,17 @@
     searchSuggestions.html('');
 
     var suggestions = $.map(items.slice(0, 10), function (item) {
+
+      var href = '#' + item.type + '-';
+      href = item.uuid ? href + item.uuid : href + item.name;
+
+      console.log(item);
+
       var $li = $('<li />', {
-        'data-type': item.type,
-        'data-name': item.name,
-        'html': '<a href="#' + item.type + '-' + item.name + '"><code>' + item.type.slice(0, 3) + '</code> ' + item.name + '</a>'
+        'data-type': item.type.trim(),
+        'data-name': item.name.trim(),
+        'data-group': item.group.trim(),
+        'html': '<a href="'+href+'"><code>' + item.type + ' - ' + item.group + '</code><br>' + item.name + '</a>'
       });
 
       searchSuggestions.append($li);

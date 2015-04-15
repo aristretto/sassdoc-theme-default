@@ -34,10 +34,16 @@ $level-3: $level-2 + 2em;
   font-size: 0.9em;
 
   a {
-    padding: 0.5em $level-3;
+    padding: 0 3.5em;
     display: block;
     text-decoration: none;
     color: $black;
+  }
+
+  pre {
+    margin: 0;
+    padding: .5em 0;
+    border-bottom: 1px solid #eee;
   }
 
   @include on-event {
@@ -53,7 +59,8 @@ $level-3: $level-2 + 2em;
  * List item heading
  */
 .sidebar__item--heading {
-  padding: 1em $level-1;
+  // padding: 1em $level-1;
+  padding: 1em 1.5em;
 
   a {
     font-weight: bold;
@@ -77,6 +84,8 @@ $level-3: $level-2 + 2em;
 .sidebar__item--heading,
 .sidebar__item--sub-heading {
   position: relative;
+  margin-bottom: 0;
+  margin-top: 0;
 
   &:after {
     @include absolute($right: 2em, $top: 50%);

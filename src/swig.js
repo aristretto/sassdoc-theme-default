@@ -10,6 +10,7 @@ export default swig;
 swigExtras.useFilter(swig, 'split');
 swigExtras.useFilter(swig, 'trim');
 swigExtras.useFilter(swig, 'groupby');
+swigExtras.useFilter(swig, 'truncate');
 
 const safe = fn =>
   fn.safe = true && fn;

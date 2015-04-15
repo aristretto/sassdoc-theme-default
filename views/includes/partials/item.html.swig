@@ -1,4 +1,8 @@
+{% if item.context.type == 'css' %}
+<section class="main__item  container  item{% if item.alias %}  item--alias{% endif %}{% if 'deprecated'|in(item) %}  item--deprecated{% endif %}" id="{{ item.context.type }}-{{ item.context.uuid }}">
+{% else %}
 <section class="main__item  container  item{% if item.alias %}  item--alias{% endif %}{% if 'deprecated'|in(item) %}  item--deprecated{% endif %}" id="{{ item.context.type }}-{{ item.context.name }}">
+{% endif %}
 
 {% include '../annotations/name.html.swig' %}
 

@@ -16,7 +16,7 @@
       <section class="main__section">
         <h1 class="main__heading" id="{{ group_name }}">
           <div class="container">
-            {{ groups[group_name] }}
+            {{ groups[group_name]|capitalize }}
           </div>
         </h1>
 
@@ -26,9 +26,13 @@
           {# If items to be displayed in type #}
           {% if items.length > 0 %}
             <section class="main__sub-section" id="{{ group_name }}-{{ type }}">
-              <h2 class="main__heading--secondary">
+              <h2 class="main__heading--secondary container">
                 <div class="container">
-                  {{ (type + 's') }}
+                  {% if type != 'css' %}
+                  {{ (type + 's'|capitalize) }}
+                  {% else %}
+                  {{ type|capitalize }}
+                  {% endif %}
                 </div>
               </h2>
 

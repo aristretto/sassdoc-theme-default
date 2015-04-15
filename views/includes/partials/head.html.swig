@@ -18,3 +18,7 @@
 
 <!-- Thanks to Sass-lang.com for the icons -->
 <link href="{{ shortcutIcon.url }}" rel="shortcut icon">
+
+<!-- Typekit font loader for Counsyl fonts -->
+<script src="//use.typekit.net/ldo5dmq.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>

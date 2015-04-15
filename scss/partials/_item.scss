@@ -8,8 +8,9 @@
 .item__heading {
   color: $black;
   margin: $vertical-rhythm * 3 0 $vertical-rhythm 0;
+  // margin: $vertical-rhythm 0;
   position: relative;
-  font-size: 2em;
+  font-size: 1.75em;
   font-weight: 300;
   float: left;
 }
@@ -19,6 +20,11 @@
  */
 .item__name {
   color: $primary-color;
+  display: block;
+
+  pre {
+    white-space: pre-line;
+  }
 }
 
 /**
@@ -245,6 +251,11 @@ li.item__description {
   position: relative;
   clear: both;
   margin-bottom: $vertical-rhythm;
+  transition: box-shadow .18s;
+
+  &:hover {
+    box-shadow: 0 0 4px rgba(0,0,0,.3);
+  }
 }
 
 .color-preview--inline {

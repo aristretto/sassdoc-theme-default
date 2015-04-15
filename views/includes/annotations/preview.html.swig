@@ -27,36 +27,8 @@
   {% endif %}
 </div>
 
-{# ID Selectors #}
-{% elseif item.context.type == "ID" %}
-
-<div class="item__code-wrapper">
-  <pre class="item__code  item__code--togglable  language-scss"
-    data-current-state="collapsed"
-    data-expanded="#{{ item.context.name }} { {{ item.context.code }} }"
-    data-collapsed="#{{ item.context.name }} { ... }"><code>#{{ item.context.name }} { ... }</code></pre>
-
-  {% if basePath %}
-    <a href="{{ basePath }}/{{ item.file.path }}#L{{ item.context.line.start }}-L{{ item.context.line.end }}" class="item__source-link" target="_blank">View source</a>
-  {% endif %}
-</div>
-
-{# Class Selectors #}
-{% elseif item.context.type == "Classname" %}
-
-<div class="item__code-wrapper">
-  <pre class="item__code  item__code--togglable  language-scss"
-    data-current-state="collapsed"
-    data-expanded=".{{ item.context.name }} { {{ item.context.code }} }"
-    data-collapsed=".{{ item.context.name }} { ... }"><code>.{{ item.context.name }} { ... }</code></pre>
-
-  {% if basePath %}
-    <a href="{{ basePath }}/{{ item.file.path }}#L{{ item.context.line.start }}-L{{ item.context.line.end }}" class="item__source-link" target="_blank">View source</a>
-  {% endif %}
-</div>
-
-{# HTML Selectors #}
-{% elseif item.context.type == "HTML" %}
+{# CSS Selectors #}
+{% elseif item.context.type == "css" %}
 
 <div class="item__code-wrapper">
   <pre class="item__code  item__code--togglable  language-scss"

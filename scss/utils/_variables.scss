@@ -1,12 +1,15 @@
-/// Pink
+/// Dark, Carbon Gray
 /// @type Color
-$pink: #dd5a6f;
+$gray: #535961;
 
 
-/// Purple
+/// Light Gray
 /// @type Color
-$purple: #5c4863;
+$gray--light: #B4BAC3;
 
+/// Counsyl Seafoam
+/// @type Color
+$seafoam: #01BEBD;
 
 /// Yellow
 /// @type Color
@@ -20,7 +23,7 @@ $black: #333;
 
 /// Primary color
 /// @type Color
-$primary-color: $pink;
+$primary-color: $gray;
 
 
 /// Primary color
@@ -30,8 +33,11 @@ $secondary-color: $yellow;
 
 /// Primary color
 /// @type Color
-$tertiary-color: $purple;
+$tertiary-color: $gray--light;
 
+/// Primary color
+/// @type Color
+$quaternary-color: $seafoam;
 
 /// Light grey
 /// @type Color

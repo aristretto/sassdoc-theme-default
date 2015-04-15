@@ -3,7 +3,11 @@
     <span class="item__access">[{{ item.access }}]</span>
   {% endif %}
 
-  <a class="item__name" href="#{{ item.context.type }}-{{ item.context.name }}">{{ item.context.name }}</a>
+  {% if item.context.type == 'css' %}
+  <a class="item__name" href="#{{ item.context.type }}-{{ item.context.uuid }}"><pre>{{ item.context.name|replace('\n',' ', 'g') }}</pre></a>
+  {% else %}
+  <a class="item__name" href="#{{ item.context.type }}-{{ item.context.name }}"><pre>{{ item.context.name|replace('\n',' ', 'g') }}</pre></a>
+  {% endif %}
 
   {% if display.alias and item.aliased.length > 0 %}
     <span class="item__aliased">(aliased as
